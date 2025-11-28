@@ -21,30 +21,30 @@ export function CurrentlySection() {
             <ul className="space-y-3">
               <li className="text-sm text-muted-foreground leading-relaxed">
                 <a
-                  href="https://www.amazon.in/Bulls-Bears-Other-Beasts-Santosh/dp/9385152467"
+                  href="https://amzn.in/d/g7BkrIe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-accent transition-colors group"
+                  className="hover:text-accent transition-colors"
                 >
                   <span className="font-semibold text-foreground">Bulls, Bears and Other Beasts</span>
                   <span className="block text-xs mt-0.5">— Santosh Nair</span>
-                  <span className="inline-flex items-center gap-1 text-xs text-accent mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="inline-flex items-center gap-1 text-xs text-accent mt-1">
                     <ExternalLink className="h-3 w-3" /> Buy on Amazon
                   </span>
                 </a>
               </li>
               <li className="text-sm text-muted-foreground leading-relaxed">
                 <a
-                  href="https://www.amazon.in/India-that-Bharat-Coloniality-Civilisation/dp/9391165680"
+                  href="https://amzn.in/d/910g58g"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-accent transition-colors group"
+                  className="hover:text-accent transition-colors"
                 >
                   <span className="font-semibold text-foreground">
                     India, That is Bharat: Coloniality, Civilisation, Constitution
                   </span>
                   <span className="block text-xs mt-0.5">— J. Sai Deepak</span>
-                  <span className="inline-flex items-center gap-1 text-xs text-accent mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="inline-flex items-center gap-1 text-xs text-accent mt-1">
                     <ExternalLink className="h-3 w-3" /> Buy on Amazon
                   </span>
                 </a>
@@ -64,14 +64,14 @@ export function CurrentlySection() {
                   href="https://transformer-circuits.pub/2025/attribution-graphs/biology.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-accent transition-colors group"
+                  className="hover:text-accent transition-colors"
                 >
                   <span className="font-semibold text-foreground">On the Biology of a Large Language Model</span>
                   <span className="block text-xs mt-0.5">— Transformer Circuits Research Collective</span>
                   <span className="block text-xs text-muted-foreground mt-1 italic">
                     Understanding attribution graphs & internal structure of LLM reasoning
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs text-accent mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="inline-flex items-center gap-1 text-xs text-accent mt-1">
                     <ExternalLink className="h-3 w-3" /> Read Paper
                   </span>
                 </a>

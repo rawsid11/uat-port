@@ -21,9 +21,9 @@ export function NewspaperHeader() {
     <header className="border-b-2 border-border pb-4">
       <div className="flex flex-col sm:flex-row justify-between items-center text-xs mb-2 border-b border-border pb-2 gap-2 sm:gap-0">
         <div className="text-center sm:text-left">
-          <p className="font-mono tracking-wider">The People's Paper</p>
+          <p className="font-mono tracking-wider">"All the data, all the insights"</p>
           <div className="border border-foreground px-2 py-0.5 inline-block mt-1">
-            <span className="font-bold text-[10px]">HOME EDITION</span>
+            <span className="font-bold text-[10px]">Est. 2024</span>
           </div>
         </div>
 

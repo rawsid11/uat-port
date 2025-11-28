@@ -126,7 +126,9 @@
   }
 }
 
-/* Enhanced paper grain/dust texture - more visible now */
+/* Enhanced vintage newspaper texture - much more visible grain, stains, and aged paper effects */
+
+/* Primary paper grain - heavy texture */
 body::before {
   content: "";
   position: fixed;
@@ -136,17 +138,17 @@ body::before {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.15;
   mix-blend-mode: multiply;
 }
 
 .dark body::before {
-  opacity: 0.06;
+  opacity: 0.1;
   mix-blend-mode: overlay;
 }
 
-/* Enhanced paper texture with visible speckles and aged paper effect */
+/* Visible dust particles, age spots, and coffee stain effects */
 body::after {
   content: "";
   position: fixed;
@@ -156,32 +158,57 @@ body::after {
   height: 100%;
   pointer-events: none;
   z-index: 9998;
-  /* Larger dust particles */
-  background: radial-gradient(circle at 15% 25%, rgba(101, 67, 33, 0.12) 0%, transparent 2px),
-    radial-gradient(circle at 85% 15%, rgba(101, 67, 33, 0.1) 0%, transparent 1.5px),
-    radial-gradient(circle at 45% 75%, rgba(101, 67, 33, 0.11) 0%, transparent 2px),
-    radial-gradient(circle at 92% 85%, rgba(101, 67, 33, 0.09) 0%, transparent 1px),
-    radial-gradient(circle at 8% 92%, rgba(101, 67, 33, 0.13) 0%, transparent 2.5px),
-    radial-gradient(circle at 65% 8%, rgba(101, 67, 33, 0.08) 0%, transparent 1px),
-    radial-gradient(circle at 25% 55%, rgba(101, 67, 33, 0.1) 0%, transparent 1.5px),
-    radial-gradient(circle at 75% 45%, rgba(101, 67, 33, 0.11) 0%, transparent 2px),
-    radial-gradient(circle at 35% 35%, rgba(101, 67, 33, 0.09) 0%, transparent 1px),
-    radial-gradient(circle at 55% 65%, rgba(101, 67, 33, 0.12) 0%, transparent 2px), /* Aged paper edge vignette */
-    radial-gradient(ellipse at center, transparent 50%, rgba(101, 67, 33, 0.06) 100%);
+  /* Coffee stain top-right */
+  background:
+    radial-gradient(
+      ellipse 120px 100px at 85% 12%,
+      rgba(139, 90, 43, 0.08) 0%,
+      rgba(139, 90, 43, 0.12) 30%,
+      transparent 70%
+    ),
+    /* Coffee stain bottom-left */
+    radial-gradient(
+      ellipse 100px 80px at 10% 85%,
+      rgba(139, 90, 43, 0.06) 0%,
+      rgba(139, 90, 43, 0.1) 40%,
+      transparent 70%
+    ),
+    /* Age spots / foxing */
+    radial-gradient(circle at 20% 30%, rgba(139, 100, 60, 0.15) 0%, transparent 8px),
+    radial-gradient(circle at 75% 20%, rgba(139, 100, 60, 0.12) 0%, transparent 6px),
+    radial-gradient(circle at 90% 60%, rgba(139, 100, 60, 0.1) 0%, transparent 10px),
+    radial-gradient(circle at 15% 70%, rgba(139, 100, 60, 0.13) 0%, transparent 7px),
+    radial-gradient(circle at 60% 85%, rgba(139, 100, 60, 0.11) 0%, transparent 9px),
+    radial-gradient(circle at 40% 15%, rgba(139, 100, 60, 0.14) 0%, transparent 5px),
+    radial-gradient(circle at 55% 45%, rgba(139, 100, 60, 0.09) 0%, transparent 8px),
+    radial-gradient(circle at 30% 55%, rgba(139, 100, 60, 0.12) 0%, transparent 6px),
+    radial-gradient(circle at 80% 75%, rgba(139, 100, 60, 0.1) 0%, transparent 7px),
+    radial-gradient(circle at 45% 35%, rgba(139, 100, 60, 0.08) 0%, transparent 5px),
+    /* Vignette - darkened edges */
+    radial-gradient(ellipse at center, transparent 40%, rgba(101, 67, 33, 0.12) 100%);
 }
 
 .dark body::after {
-  background: radial-gradient(circle at 15% 25%, rgba(232, 212, 179, 0.06) 0%, transparent 2px),
-    radial-gradient(circle at 85% 15%, rgba(232, 212, 179, 0.05) 0%, transparent 1.5px),
-    radial-gradient(circle at 45% 75%, rgba(232, 212, 179, 0.055) 0%, transparent 2px),
-    radial-gradient(circle at 92% 85%, rgba(232, 212, 179, 0.045) 0%, transparent 1px),
-    radial-gradient(circle at 8% 92%, rgba(232, 212, 179, 0.065) 0%, transparent 2.5px),
-    radial-gradient(circle at 65% 8%, rgba(232, 212, 179, 0.04) 0%, transparent 1px),
-    radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.15) 100%);
+  background: radial-gradient(
+      ellipse 120px 100px at 85% 12%,
+      rgba(100, 80, 60, 0.05) 0%,
+      rgba(100, 80, 60, 0.08) 30%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 100px 80px at 10% 85%,
+      rgba(100, 80, 60, 0.04) 0%,
+      rgba(100, 80, 60, 0.06) 40%,
+      transparent 70%
+    ), radial-gradient(circle at 20% 30%, rgba(200, 180, 150, 0.06) 0%, transparent 8px),
+    radial-gradient(circle at 75% 20%, rgba(200, 180, 150, 0.05) 0%, transparent 6px),
+    radial-gradient(circle at 90% 60%, rgba(200, 180, 150, 0.04) 0%, transparent 10px),
+    radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.2) 100%);
 }
 
-/* Additional paper fiber texture layer */
-.paper-texture-overlay {
+/* Paper fiber texture - visible horizontal/vertical lines like real newsprint */
+.main-content::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
@@ -192,34 +219,89 @@ body::after {
   background-image: repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(101, 67, 33, 0.02) 2px,
-      rgba(101, 67, 33, 0.02) 4px
+      transparent 3px,
+      rgba(101, 67, 33, 0.03) 3px,
+      rgba(101, 67, 33, 0.03) 4px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 3px,
-      rgba(101, 67, 33, 0.015) 3px,
-      rgba(101, 67, 33, 0.015) 6px
+      transparent 4px,
+      rgba(101, 67, 33, 0.02) 4px,
+      rgba(101, 67, 33, 0.02) 5px
     );
 }
 
-.dark .paper-texture-overlay {
+.dark .main-content::before {
   background-image: repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(232, 212, 179, 0.01) 2px,
-      rgba(232, 212, 179, 0.01) 4px
+      transparent 3px,
+      rgba(232, 212, 179, 0.015) 3px,
+      rgba(232, 212, 179, 0.015) 4px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 3px,
-      rgba(232, 212, 179, 0.008) 3px,
-      rgba(232, 212, 179, 0.008) 6px
+      transparent 4px,
+      rgba(232, 212, 179, 0.01) 4px,
+      rgba(232, 212, 179, 0.01) 5px
     );
+}
+
+/* Creased/fold line effect */
+.main-content::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9996;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.04) 20%,
+    rgba(0, 0, 0, 0.06) 50%,
+    rgba(0, 0, 0, 0.04) 80%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+}
+
+.dark .main-content::after {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.02) 20%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.02) 80%,
+    transparent 100%
+  );
+}
+
+/* Torn edge effect on sections */
+.torn-edge {
+  position: relative;
+}
+
+.torn-edge::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0,5 Q5,0 10,5 T20,5 T30,5 T40,5 T50,5 T60,5 T70,5 T80,5 T90,5 T100,5 L100,10 L0,10 Z' fill='%23f4e4c9'/%3E%3C/svg%3E")
+    repeat-x;
+  background-size: 100px 10px;
+}
+
+.dark .torn-edge::after {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0,5 Q5,0 10,5 T20,5 T30,5 T40,5 T50,5 T60,5 T70,5 T80,5 T90,5 T100,5 L100,10 L0,10 Z' fill='%231a1510'/%3E%3C/svg%3E")
+    repeat-x;
+  background-size: 100px 10px;
 }
 
 /* Newspaper texture overlay with grain effect */
@@ -356,14 +438,11 @@ body::after {
   color: #c44040;
 }
 
-/* Fixed pull-quote styling to prevent word breaking */
+/* Simplified pull-quote - SVG handles the text now */
 .pull-quote {
   position: relative;
   padding: 1.5rem 2rem;
   margin: 1.5rem 0;
-  font-style: italic;
-  font-size: 1.25rem;
-  text-align: center;
   border-top: 2px solid #2c2416;
   border-bottom: 2px solid #2c2416;
 }
@@ -387,26 +466,6 @@ body::after {
 
 .dark .pull-quote::before {
   color: #c44040;
-}
-
-/* New classes to prevent line breaking in quote */
-.quote-line-1,
-.quote-line-2 {
-  display: block;
-  white-space: nowrap;
-}
-
-@media (max-width: 480px) {
-  .quote-line-1,
-  .quote-line-2 {
-    white-space: normal;
-    word-break: keep-all;
-  }
-
-  .pull-quote {
-    font-size: 1rem;
-    padding: 1rem 1rem;
-  }
 }
 
 /* Ornamental divider */
@@ -673,4 +732,26 @@ html {
 
 .nav-link:hover {
   color: var(--accent);
+}
+
+/* Ink smudge effect for buttons/links on hover */
+.ink-smudge {
+  position: relative;
+}
+
+.ink-smudge::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(44, 36, 22, 0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(2px);
+}
+
+.ink-smudge:hover::before {
+  opacity: 1;
 }

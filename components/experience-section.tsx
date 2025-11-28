@@ -41,13 +41,11 @@ export function ExperienceSection() {
 
           <div className="space-y-4">
             {timelineItems.map((item, index) => (
-              <div key={index} className="timeline-item group cursor-default py-2">
+              <div key={index} className="timeline-item cursor-default py-2">
                 <div className="flex flex-col">
                   <span className="text-accent font-bold text-sm sm:text-base">{item.highlight}</span>
                   <span className="text-xs sm:text-sm text-foreground">{item.description}</span>
-                  <span className="text-[10px] sm:text-xs text-muted-foreground mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {item.detail}
-                  </span>
+                  <span className="text-[10px] sm:text-xs text-muted-foreground mt-1">{item.detail}</span>
                 </div>
               </div>
             ))}

@@ -70,7 +70,7 @@ export function ProjectsSection() {
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="hidden sm:block font-bold text-lg uppercase tracking-wide">{project.title}</h4>
-                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 ml-2" />
+                    <ExternalLink className="w-4 h-4 flex-shrink-0 ml-2" />
                   </div>
                   <p className="text-sm text-justify leading-relaxed mb-3 text-muted-foreground">
                     {project.description}

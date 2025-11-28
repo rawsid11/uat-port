@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <LoadingScreen />
 
-      <main className="min-h-screen bg-background relative">
+      <main className="main-content min-h-screen bg-background relative">
         {/* Noise texture overlay */}
         <div className="fixed inset-0 pointer-events-none newspaper-texture z-20" />
 
